@@ -11,8 +11,6 @@ public class Compose extends Base
     @FindBy(xpath="//textarea[@name='to']") private WebElement To;
     @FindBy(xpath="//input[@name='subjectbox']") private WebElement Subject;
     @FindBy(xpath="//div[@aria-label='Message Body']") private WebElement MailBody;
-    //@FindBy(xpath="//*[@id=\":an\"]/div[2]") private WebElement ThreeDot;
-    //@FindBy(xpath="//tbody/tr[1]/td[5]/div[1]/div[1]/div[1]/div[2]") private WebElement ThreeDot;
     @FindBy(xpath="//tbody/tr/td[5]//div[@class='J-J5-Ji J-JN-M-I-JG']") private WebElement ThreeDot;
     @FindBy(xpath="(//div[@class='J-N-Jz'])[9]") private WebElement label;
     @FindBy(xpath="//div[@title='Social']") private WebElement SocialLabel;
@@ -30,18 +28,13 @@ public class Compose extends Base
 
     public void ComposePage() throws InterruptedException, IOException {
         ClkOnCompose.click();
-        //To.sendKeys("suhasjoshi1856@gmail.com");
         To.sendKeys(Utility.getTD(0,0));
-        //Subject.sendKeys("Test Mail");
-          Subject.sendKeys(Utility.getTD(0,2));
-        //MailBody.sendKeys("Test Email Body");
+        Subject.sendKeys(Utility.getTD(0,2));
         MailBody.sendKeys(Utility.getTD(0,3));
         ThreeDot.click();
         Thread.sleep(3000);
         label.click();
         Thread.sleep(5000);
-//		Actions act = new Actions(driver);
-//		act.moveToElement(SocialLabel).click().build();
         SocialLabel.click();
         Send.click();
         Thread.sleep(5000);
