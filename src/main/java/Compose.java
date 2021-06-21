@@ -3,6 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class Compose extends Base
 {
     @FindBy(xpath="//div[@class='T-I T-I-KE L3']") private WebElement ClkOnCompose;
@@ -26,12 +28,14 @@ public class Compose extends Base
 
     }
 
-    public void ComposePage() throws InterruptedException
-    {
+    public void ComposePage() throws InterruptedException, IOException {
         ClkOnCompose.click();
-        To.sendKeys("suhasjoshi1856@gmail.com");
-        Subject.sendKeys("Test Mail");
-        MailBody.sendKeys("Test Email Body");
+        //To.sendKeys("suhasjoshi1856@gmail.com");
+        To.sendKeys(Utility.getTD(0,0));
+        //Subject.sendKeys("Test Mail");
+          Subject.sendKeys(Utility.getTD(0,2));
+        //MailBody.sendKeys("Test Email Body");
+        MailBody.sendKeys(Utility.getTD(0,3));
         ThreeDot.click();
         Thread.sleep(3000);
         label.click();

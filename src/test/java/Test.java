@@ -1,6 +1,8 @@
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.IOException;
+
 public class Test extends Base
 {
     Login login;
@@ -22,13 +24,13 @@ public class Test extends Base
     }
 
     @org.testng.annotations.Test(priority = 0)
-    public void LoginToGmail() throws InterruptedException {
+    public void LoginToGmail() throws InterruptedException, IOException {
         login.LoginPage();
         System.out.println("Gmail Login Activity Sucessful");
     }
 
     @org.testng.annotations.Test(priority=1)
-    public void ComposeAnEmail() throws InterruptedException {
+    public void ComposeAnEmail() throws InterruptedException, IOException {
         compose.ComposePage();
         System.out.println("Compose Email Activity Sucessful ");
     }

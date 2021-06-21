@@ -3,6 +3,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.IOException;
+
 public class Login extends Base
 {
 
@@ -17,11 +19,11 @@ public class Login extends Base
 
     }
 
-    public void LoginPage() throws InterruptedException {
+    public void LoginPage() throws InterruptedException, IOException {
 
-        EnterEmail.sendKeys("suhasjoshi1856@gmail.com");
+        EnterEmail.sendKeys(Utility.getTD(0,0));
         ClkOnNext1.click();
-        EnterPassword.sendKeys("Suhasjoshi1857");
+        EnterPassword.sendKeys(Utility.getTD(0,1));
         Thread.sleep(4000);
         ClkOnNext2.click();
     }
