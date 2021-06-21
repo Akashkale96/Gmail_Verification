@@ -23,7 +23,7 @@ public class Test extends Base
         verify = new Verification(driver);
     }
 
-    @org.testng.annotations.Test(priority = 0)
+    @org.testng.annotations.Test()
     public void LoginToGmail() throws InterruptedException, IOException {
         login.LoginPage();
         System.out.println("Gmail Login Activity Sucessful");
