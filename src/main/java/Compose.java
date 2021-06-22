@@ -16,7 +16,7 @@ public class Compose extends Base
     @FindBy(xpath="//div[@title='Social']") private WebElement SocialLabel;
     @FindBy(xpath="//div[@aria-label='Send ‪(Ctrl-Enter)‬']") private WebElement Send;
     @FindBy(xpath="//div[@aria-label='Social']") private WebElement social;
-    @FindBy(xpath="//span[@class='aXw T-KT']") private WebElement Starred;
+    @FindBy(xpath="(//td[@class='apU xY'])[3]") private WebElement Starred;
     @FindBy(xpath="(//span[@name='me'])[2]") private WebElement OpenTheEmail;
 
 
@@ -41,7 +41,7 @@ public class Compose extends Base
         driver.navigate().refresh();
         Thread.sleep(4000);
         social.click();
-        Thread.sleep(4000);
+        Thread.sleep(10000);
         Starred.click();
         Thread.sleep(6000);
         OpenTheEmail.click();
