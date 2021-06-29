@@ -41,8 +41,9 @@ public class Compose extends Base
         driver.navigate().refresh();
         Thread.sleep(4000);
         social.click();
-        Thread.sleep(10000);
-        Starred.click();
+//        Thread.sleep(10000);
+//        Starred.click();
+//
         Thread.sleep(6000);
         OpenTheEmail.click();
     }
